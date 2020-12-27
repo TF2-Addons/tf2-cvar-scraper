@@ -1,0 +1,16 @@
+{
+  "name": "tf2-cvar-scraper",
+  "version": "1.0.0",
+  "description": "Scrape TF2 command and variable info from the Valve developer wiki",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Techdoodle",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "node-fetch": "^2.6.1"
+  }
+}
