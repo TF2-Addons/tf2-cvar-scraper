@@ -22,6 +22,11 @@ async function scrapeData()
         {
             const parts = line.split(':');
             const [name, defValue, flags] = parts.splice(0, 3).map(v => v.trim());
+            // Remove duplicates
+            if(cvars.filter(v => v.name === name).length !== 0)
+            {
+                return;
+            }
             const desc = parts.join(':').trim();
             
             cvars.push({
