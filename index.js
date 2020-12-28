@@ -40,5 +40,11 @@ async function scrapeData()
 {
     const {cvars, version} = await scrapeData();
     console.log(`Loaded ${cvars.length} cvars ${version}`);
-    await fs.writeFile('./cvars.json', JSON.stringify(cvars));
+    try
+    {
+        await fs.mkdir('./dist');
+    }
+    catch(ignored) {}
+    await fs.writeFile('./dist/cvars.json', JSON.stringify(cvars));
+    await fs.writeFile('./dist/cvars-formatted.json', JSON.stringify(cvars, null, 4));
 })();
